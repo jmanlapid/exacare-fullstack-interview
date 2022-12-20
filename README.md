@@ -12,7 +12,7 @@ You are not graded on completing 100% of the objectives but rather your choice o
 `$ npm start`
 
 # Requirements
-You are tasked with building out the frontend of a system that manages an assisted living facility's electronic health records. The requirements are as follows. You are not provided designs so please do your best to display the information in reasonably a pleasant UI.
+You are tasked with building out the frontend of a system that manages an assisted living facility's electronic health records. The requirements are as follows. You are not provided designs so please do your best to display the information in a reasonably pleasant UI.
 
 ## View 1/ List Residents
 
