@@ -5,7 +5,7 @@ This assessment is meant to measure your competence in
 * interacting with a live API 
 * navigating unclear requirements
 
-You are not graded on completnig 100% of the objectives but rather your choice of implementation, communicating intent, and a reasonable throughput of completing requirements.
+You are not graded on completing 100% of the objectives but rather your choice of implementation, communicating intent, and a reasonable throughput of completing requirements.
 
 # How to run the application
 
