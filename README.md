@@ -38,6 +38,7 @@ You are tasked with building out the frontend of a system that manages an assist
 ## Areas for discussion
 * pagination
 * debounce / deferring
+* URLs
 * testing
 
 # API
