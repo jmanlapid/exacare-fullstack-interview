@@ -24,7 +24,7 @@ You are tasked with building out the frontend of a system that manages an assist
   * room id
 * Integrate pagination (requires backend work)
 * Filter residents by search query parameters
-* Sync URL search params with pagination * filters
+* Sync URL search params with pagination + filters
 
 # API
 

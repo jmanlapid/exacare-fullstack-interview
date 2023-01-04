@@ -19,7 +19,7 @@ for (let x = 0; x < 2500; x += 1) {
   });
   residents.push({
     // Begin basic data only returned in GET /residents
-    image_url: `https://avatars.dicebear.com/api/open-peeps/${faker.datatype.uuid()}.svg`,
+    image_url: `https://avatars.dicebear.com/api/open-peeps/${x}.svg`,
     id: x.toString(),
     first_name: faker.name.firstName(gender),
     last_name: faker.name.lastName(),
@@ -27,15 +27,6 @@ for (let x = 0; x < 2500; x += 1) {
     dob: `${dob.getFullYear()}-${dob.getMonth() + 1}-${dob.getDate()}`,
     facility_id: faker.datatype.number(100).toString(),
     room_id: faker.datatype.number(49).toString(),
-    // Begin detailed data only returned in GET /residents/:resident_id/vitals
-    vitals: {
-      height: `${faker.datatype.number({min: 5, max: 6})}' ${faker.datatype.number({min: 0, max: 11})}\"`,
-      weight: `${faker.datatype.number({min: 90, max: 225})} lbs`,
-      oxygen_saturation: `${faker.datatype.number({ min: 95, max: 100})}%`,
-      temperature: `${faker.datatype.number({ min: 97, max: 99, precision: 0.1})} °F`,
-      pain_level: faker.helpers.arrayElement(['none', 'low', 'medium', 'high', 'extreme'])
-    }
-    
   });
 }
 
@@ -69,13 +60,7 @@ app.get('/residents',(req, res) => {
     return conditions.every(condition => condition === true) || conditions.length === 0
   });
 
-  const filteredResidentsWithoutVitals = filteredResidents.map((item) => {
-    const copy = {...item};
-    delete copy.vitals;
-    return copy;
-  });
-
-  return res.send(filteredResidentsWithoutVitals);
+  return res.send(filteredResidents);
 });
 
 app.get('/status', (req, res) => {
