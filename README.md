@@ -14,7 +14,7 @@ You are not graded on completing 100% of the objectives but rather your choice o
 # Requirements
 You are tasked with building out the frontend of a system that manages an assisted living facility's electronic health records. The requirements are as follows. You are not provided designs so just make the UI legible.
 
-## View 1/ List Residents
+## List Residents Page
 
 * Display all resident's information
   * full name
@@ -22,24 +22,9 @@ You are tasked with building out the frontend of a system that manages an assist
   * age in years
   * gender
   * room id
+* Integrate pagination (requires backend work)
 * Filter residents by search query parameters
-
-## View 2/ Resident Vitals
-
-* Clicking a resident takes you to that resident's detailed vitals view
-* Display resident's vitals
-  * height
-  * weight
-  * oxygen saturation
-  * temperature
-  * pain level
-* Form to update a resident's vitals
-
-## Areas for discussion
-* pagination
-* debounce / deferring
-* URLs
-* testing
+* Sync URL search params with pagination * filters
 
 # API
 
@@ -68,23 +53,4 @@ interface FindResidentsSearchQueryParameters {
 }
 
 type FindResidentsResponseBody = Resident[]
-```
-
-## GET /residents/:resident_id/vitals
-```typescript
-  interface ResidentVitals {
-    height: string;
-    weight: string;
-    oxygen_saturation: string;
-    temperature: string;
-    pain_level: 'none' | 'low' | 'medium' | 'high' | 'extreme';
-  }
-
-  type GetResidentVitalsResponseBody = ResidentVitals;
-```
-
-## PUT /residents/:resident_id/vitals
-```typescript
-  type UpdateResidentVitalsRequestBody = ResidentVitals;
-  type UpdateResidentVitalsResponseBody = ResidentVitals;
 ```

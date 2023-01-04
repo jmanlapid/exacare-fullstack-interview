@@ -78,38 +78,6 @@ app.get('/residents',(req, res) => {
   return res.send(filteredResidentsWithoutVitals);
 });
 
-app.get('/residents/:resident_id/vitals', (req, res) => {
-  const matchingResidentVitals = residents.find((resident) => resident.id == req.params.resident_id)?.vitals;
-
-  if (!matchingResidentVitals) {
-    return res.status(404);
-  }
-
-  return res.status(200).send(matchingResidentVitals);
-});
-
-app.put('/residents/:resident_id/vitals', (req, res) => {
-  const matchingResidentIndex = residents.findIndex((resident) => resident.id == req.params.resident_id);
-  const {height, weight, oxygen_saturation, temperature, pain_level} = req.body;
-
-  if (matchingResidentIndex === -1) {
-    return res.status(404);
-  }
-
-  const currentVitals = residents[matchingResidentIndex].vitals;
-  const newVitals = {
-    ...currentVitals,
-    ...(height ? {height} : {}),
-    ...(weight ? {weight} : {}),
-    ...(oxygen_saturation ? {oxygen_saturation} : {}),
-    ...(temperature ? {temperature} : {}),
-    ...(pain_level ? {pain_level} : {}),
-  };
-
-  residents[matchingResidentIndex].vitals = newVitals;
-  return res.status(200).send(newVitals);
-});
-
 app.get('/status', (req, res) => {
   res.send('ok')
 })
