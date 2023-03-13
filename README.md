@@ -49,13 +49,5 @@ interface Resident {
   room_id: string;
 }
 
-interface FindResidentsSearchQueryParameters {
-  id: string;
-  name: string;
-  gender: 'male' | 'female';
-  facility_id: string;
-  room_id: string;
-}
-
 type FindResidentsResponseBody = Resident[]
 ```
