@@ -25,9 +25,10 @@ You are tasked with building out the frontend of a system that manages an assist
   * gender
   * room id
 * Pick one of the following
-  * Pagination (fullstack)
-  * Search query parameters (fullstack)
-  * Caching (backend)
+  * Pagination
+    * Extend GET /residents endpoint to accept pagination query parameters such as page & count which will return a maximum count size for that page. Modify the frontend to interface with these new parameters.
+  * Search query parameters
+    * Extend GET /residents endpoint to accept search query parameters that'll filter residents based on certain row attributes such as gender or first_name. Modify the frontend to interface with these new parameters.
 
 
 # API
