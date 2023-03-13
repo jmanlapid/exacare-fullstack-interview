@@ -10,7 +10,7 @@ You are not graded on completing 100% of the objectives but rather your choice o
 # How to run the application
 
 ```shell
-$ npm run dev # this installs everthing for you as well
+$ npm start # this installs everthing for you as well
 ```
 
 # Requirements
